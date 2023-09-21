@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmação de logout</title>
+</head>
+<body>
+    <h1>Deseja realmente sair?</h1>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Sim</a>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Não</a>
+</body>
+</html>

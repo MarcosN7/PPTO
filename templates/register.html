@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='register-style.css') }}">
+    <title>Cadastre-se</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form action="/register" method="POST" enctype="multipart/form-data">
+            <label for="user_type">Tipo de Usuário:</label>
+            <select id="user_type" name="user_type">
+                <option value="user">Usuário/Cliente</option>
+                <option value="professional">Profissional/Prestador de Serviço</option>
+            </select>
+            
+            <br>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            
+            <!-- Contêiner para campos específicos do profissional -->
+            <div id="professional_fields" style="display: none;">
+                <label for="company_name">Nome da Empresa:</label>
+                <input type="text" id="company_name" name="company_name">
+                <br>
+                <label for="profile_image">Profile Image/Logo (JPG, PNG, GIF):</label>
+                <input type="file" id="profile_image" name="profile_image">
+                <br>
+                <label for="services">Serviços (separe por vírgula):</label>
+                <input type="text" id="services" name="services">
+                <br>
+                <label for="whatsapp">WhatsApp:</label>
+                <input type="text" id="whatsapp" name="whatsapp" pattern="\+\d{11,13}" placeholder="+5511987654321" required>
+                <br>
+                <label for="price_range">Faixa de Preço:</label>
+                <input type="text" id="price_range" name="price_range">
+                <br>
+            </div>
+            
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
+    
+    <script>
+        // JavaScript para mostrar/ocultar campos específicos do profissional
+        var userTypeSelect = document.getElementById('user_type');
+        var professionalFields = document.getElementById('professional_fields');
+        
+        userTypeSelect.addEventListener('change', function() {
+            if (userTypeSelect.value === 'professional') {
+                professionalFields.style.display = 'block';
+            } else {
+                professionalFields.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        var whatsappInput = document.getElementById('whatsapp');
+    
+        whatsappInput.addEventListener('input', function() {
+            // Remove any non-digit characters from the input
+            var formattedValue = whatsappInput.value.replace(/\D/g, '');
+            
+            // Add a "+" at the beginning of the number
+            formattedValue = '+' + formattedValue;
+            
+            // Apply the formatted value back to the input
+            whatsappInput.value = formattedValue;
+        });
+    </script>
+    
+</body>
+</html>

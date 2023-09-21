@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='professional-dashboard.css') }}">
+    <title>Dashboard do Profissional</title>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao seu Dashboard, {{ professional_name }}</h1>
+        <button class="button"><a href="{{ url_for('professional_dashboard') }}">Editar Perfil</a></button>
+        <button class="button"><a href="{{ url_for('logout') }}">Sair</a></button>
+    </header>
+    <main>
+        <section>
+            <h2>Seus Dados</h2>
+            <p>Nome da Empresa: {{ company_name }}</p>
+            <p>Contato WhatsApp: {{ whatsapp }}</p>
+            <p>Faixa de Preço: {{ price_range }}</p>
+            <h2>Serviços Oferecidos</h2>
+            <ul>
+                {% for service in services %}
+                    <li>{{ service }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <p>Copyright &copy; 2023 Pau para toda Obra. All rights reserved.</p>
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Terms of Use</a></li>
+                <li><a href="">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

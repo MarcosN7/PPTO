@@ -1,0 +1,144 @@
+/* Professional Dashboard Styles */
+body {
+    font-family: 'Exo 2', sans-serif, 'PT Mono', monospace, 'Rubik', sans-serif;
+    background: linear-gradient(0deg, #ff5100 0%, #d45805 100%);
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    padding-top: 0px; /* Add some top padding to create space for header */
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+
+
+header {
+    background-color: #333;
+    background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+header h1 {
+    background-color: #292f36;
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    top: 15rem;
+    left: 2rem;
+
+}
+
+button.button {
+    background-color: #232629;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin: 20px;
+    
+}
+
+button.button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+button.button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+section {
+    background-color: #292f36;
+    max-height: fit-content;
+    color: #fff;
+    padding: 5rem;
+    position: fixed;
+    top: 16rem;
+    left: 45rem;
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+p {
+    font-size: 1rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+ul {
+    list-style-type: square;
+    margin-top: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+footer {
+    background-color:  #292f36;
+    padding: 20px 0;
+    text-align: center;
+    height: 200px;
+    position: relative;
+    margin-top: 100%;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color:  #292f36;
+    color: white;
+    
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+  
+  .footer-links li {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .footer-links li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .footer-copyright {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ffffff;
+  }
